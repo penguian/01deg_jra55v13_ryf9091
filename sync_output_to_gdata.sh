@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -q copyq
+#PBS -q express
 #PBS -l ncpus=1
 #PBS -l wd
 #PBS -l walltime=4:00:00,mem=2GB
