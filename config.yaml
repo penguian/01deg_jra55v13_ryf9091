@@ -1,7 +1,7 @@
 # PBS configuration
 # If submitting to a different project to your default uncomment line below 
 # and change project code as appropriate
-project: v45
+project: x77
 queue: normal
 walltime: 5:00:00
 jobname: 01deg_jra55_ryf
@@ -46,12 +46,13 @@ runlog: true
 stacksize: unlimited
 restart_freq: 1  # use tidy_restarts.py instead
 # mpirun: --mca pml yalla -x MXM_LOG_FILE=$PBS_JOBFS/mxm.log
-qsub_flags: -lother=hyperthread -W umask=027
+qsub_flags: -lother=hyperthread -W umask=027 -l storage=gdata/ik11+scratch/x77+gdata/ua8+gdata/hh5
 # set number of cores per node (28 for normalbw, 48 for normal on gadi)
 platform:
     nodesize: 48
 mpi:
     module: openmpi/4.0.1
+
 
 # DANGER! Do not uncomment this without checking the script is synching 
 # to the correct location!
