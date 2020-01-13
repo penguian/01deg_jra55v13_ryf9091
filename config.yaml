@@ -3,7 +3,7 @@
 # and change project code as appropriate
 project: x77
 queue: normal
-walltime: 5:00:00
+walltime: 3:00:00
 jobname: 01deg_jra55_ryf
 ncpus: 5180
 
@@ -13,24 +13,24 @@ shortpath: /scratch/x77
 # Model configuration
 name: common
 model: access-om2
-input: /g/data4/ik11/inputs/access-om2/input_08022019/common_01deg_jra55
+input: /g/data/ik11/inputs/access-om2/input_08022019/common_01deg_jra55
 submodels:
     - name: atmosphere
       model: yatm
-      exe: /g/data4/ik11/inputs/access-om2/bin/yatm_1bb8904.exe
-      input: /g/data4/ik11/inputs/access-om2/input_08022019/yatm_01deg
+      exe: /g/data/ik11/inputs/access-om2/bin/yatm_1bb8904.exe
+      input: /g/data/ik11/inputs/access-om2/input_08022019/yatm_01deg
       ncpus: 1
 
     - name: ocean
       model: mom
-      exe: /g/data4/ik11/inputs/access-om2/bin/fms_ACCESS-OM_97e3429_libaccessom2_1bb8904.x
-      input: /g/data4/ik11/inputs/access-om2/input_08022019/mom_01deg
+      exe: /g/data/ik11/inputs/access-om2/bin/fms_ACCESS-OM_97e3429_libaccessom2_1bb8904.x
+      input: /g/data/ik11/inputs/access-om2/input_08022019/mom_01deg
       ncpus: 4358
 
     - name: ice
       model: cice5
-      exe: /g/data4/ik11/inputs/access-om2/bin/cice_auscom_3600x2700_722p_d3e8bdf_libaccessom2_1bb8904.exe
-      input: /g/data4/ik11/inputs/access-om2/input_08022019/cice_01deg
+      exe: /g/data/ik11/inputs/access-om2/bin/cice_auscom_3600x2700_722p_d3e8bdf_libaccessom2_1bb8904.exe
+      input: /g/data/ik11/inputs/access-om2/input_08022019/cice_01deg
       ncpus: 799
 
 # Collation
@@ -39,7 +39,7 @@ collate:
   mem: 128GB
   ncpus: 4
   queue: express
-  exe: /g/data4/ik11/inputs/access-om2/bin/mppnccombine
+  exe: /g/data/ik11/inputs/access-om2/bin/mppnccombine
 
 # Misc
 runlog: true
