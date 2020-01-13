@@ -2,7 +2,7 @@
 #PBS -q express
 #PBS -l ncpus=1
 #PBS -l wd
-#PBS -l storage=gdata/hh5
+#PBS -l storage=gdata/hh5+scratch/x77
 #PBS -l walltime=4:00:00,mem=2GB
 #PBS -P v45
 #PBS -N output_to_gdata
