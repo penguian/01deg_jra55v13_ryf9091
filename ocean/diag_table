@@ -18,15 +18,15 @@ ACCESS-OM2-01
 "ocean_scalar",     1,  "months", 1, "days", "time",
 
 # Daily 3d prognostic variables: T,S,U,V,W
-"ocean_daily_3d_temp",  1,  "days", 1, "days", "time",
-"ocean_daily_3d_salt",  1,  "days", 1, "days", "time",
-"ocean_daily_3d_u",  1,  "days", 1, "days", "time",
-"ocean_daily_3d_v",  1,  "days", 1, "days", "time",
-"ocean_daily_3d_wt",  1,  "days", 1, "days", "time",
+#"ocean_daily_3d_temp",  1,  "days", 1, "days", "time",
+#"ocean_daily_3d_salt",  1,  "days", 1, "days", "time",
+#"ocean_daily_3d_u",  1,  "days", 1, "days", "time",
+#"ocean_daily_3d_v",  1,  "days", 1, "days", "time",
+#"ocean_daily_3d_wt",  1,  "days", 1, "days", "time",
 
 ## Adele/Ruth's DSW diagnostics
-"ocean_daily_3d_uhrho_et",  1,  "days", 1, "days", "time",
-"ocean_daily_3d_vhrho_nt",  1,  "days", 1, "days", "time",
+#"ocean_daily_3d_uhrho_et",  1,  "days", 1, "days", "time",
+#"ocean_daily_3d_vhrho_nt",  1,  "days", 1, "days", "time",
 
 # Save ocean grid data once and for all
 "ocean_model","geolon_t","geolon_t", "ocean_grid","all",.false.,"none",2
@@ -74,15 +74,15 @@ ACCESS-OM2-01
 "ocean_model","u_dot_grad_vert_pv","u_dot_grad_vert_pv","ocean","all",.true.,"none",2
 
 # 3d fields - daily output
-"ocean_model","temp","temp","ocean_daily_3d_temp","all",.true.,"none",2
-"ocean_model","salt","salt","ocean_daily_3d_salt","all",.true.,"none",2
-"ocean_model","u","u","ocean_daily_3d_u","all",.true.,"none",2
-"ocean_model","v","v","ocean_daily_3d_v","all",.true.,"none",2
-"ocean_model","wt","wt","ocean_daily_3d_wt","all",.true.,"none",2
+#"ocean_model","temp","temp","ocean_daily_3d_temp","all",.true.,"none",2
+#"ocean_model","salt","salt","ocean_daily_3d_salt","all",.true.,"none",2
+#"ocean_model","u","u","ocean_daily_3d_u","all",.true.,"none",2
+#"ocean_model","v","v","ocean_daily_3d_v","all",.true.,"none",2
+#"ocean_model","wt","wt","ocean_daily_3d_wt","all",.true.,"none",2
 
 # for Adele:
-"ocean_model","uhrho_et","uhrho_et",    "ocean_daily_3d_uhrho_et","all",.true.,"none",2
-"ocean_model","vhrho_nt","vhrho_nt",    "ocean_daily_3d_vhrho_nt","all",.true.,"none",2
+#"ocean_model","uhrho_et","uhrho_et",    "ocean_daily_3d_uhrho_et","all",.true.,"none",2
+#"ocean_model","vhrho_nt","vhrho_nt",    "ocean_daily_3d_vhrho_nt","all",.true.,"none",2
 
 # 2d fields - monthly output
 "ocean_model","sea_level","sea_level",        "ocean_month","all",.true.,"none",2
