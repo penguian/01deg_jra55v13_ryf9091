@@ -10,6 +10,11 @@ ncpus: 5180
 # Force payu to always find, and save, files in this short (or scratch) project directory
 shortpath: /scratch/x77
 
+storage:
+      gdata:
+          - ua8
+
+
 # Model configuration
 name: common
 model: access-om2
