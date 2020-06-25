@@ -1,0 +1,13 @@
+&accessom2_nml
+    log_level = 'DEBUG'
+    ice_ocean_timestep = 540
+&end
+
+&date_manager_nml
+    forcing_start_date = '1900-01-01T00:00:00'
+    forcing_end_date = '1901-01-01T00:00:00'
+    allow_forcing_and_exp_date_mismatch = .true.
+    ! Runtime for a single segment/job/submit, format is years, months, seconds,
+    ! two of which must be zero.
+    restart_period = 0, 1, 0
+&end
