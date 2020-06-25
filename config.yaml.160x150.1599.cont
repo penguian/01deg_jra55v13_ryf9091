@@ -1,0 +1,62 @@
+# PBS configuration
+# If submitting to a different project to your default uncomment line below 
+# and change project code as appropriate
+project: v45
+queue: normal
+walltime: 2:00:00
+jobname: 01deg_jra55_ryf
+ncpus: 18176
+
+# Force payu to always find, and save, files in this short (or scratch) project directory
+shortpath: /scratch/fp0
+
+# Model configuration
+name: common
+model: access-om2
+input: /g/data/ik11/inputs/access-om2/input_08022019/common_01deg_jra55
+submodels:
+    - name: atmosphere
+      model: yatm
+      exe: /scratch/fp0/pcl900/access-om2/access-om2-gadi-scaling-01/bin/yatm_c30e907.exe
+      input: /g/data/ik11/inputs/access-om2/input_08022019/yatm_01deg
+      ncpus: 1
+
+    - name: ocean
+      model: mom
+      exe: /scratch/fp0/pcl900/access-om2/access-om2-gadi-scaling-01/bin/fms_ACCESS-OM_75e267c_libaccessom2_c30e907.x
+      input:
+          - /scratch/fp0/pcl900/access-om2/access-om2-gadi-scaling-cosima/control/01deg_jra55v13_ryf9091.160x150.3199/ocean/INPUT
+          - /g/data/ik11/inputs/access-om2/input_08022019/mom_01deg
+      ncpus: 16548
+
+    - name: ice
+      model: cice5
+      exe: /scratch/fp0/pcl900/access-om2/access-om2-gadi-scaling-01/bin/cice_auscom_1444_120x135_3600x2700_1444p.exe
+      input: /g/data/ik11/inputs/access-om2/input_08022019/cice_01deg
+      ncpus: 1599
+
+# Collation
+#collate:
+#  walltime: 10:00:00
+#  mem: 192GB
+#  ncpus: 4
+#  queue: normal
+#  exe: /g/data/ik11/inputs/access-om2/bin/mppnccombine
+
+# Misc
+runlog: true
+stacksize: unlimited
+restart_freq: 1  # use tidy_restarts.py instead
+###mpirun: -mca coll_hcoll_enable 1  ##--mca pml yalla -x MXM_LOG_FILE=$PBS_JOBFS/mxm.log
+qsub_flags: -W umask=027 
+storage:
+      gdata:
+          - ua8
+# set number of cores per node (28 for normalbw, 48 for normal on gadi)
+platform:
+    nodesize: 48
+
+
+# DANGER! Do not uncomment this without checking the script is synching 
+# to the correct location!
+postscript: sync_output_to_gdata.sh
