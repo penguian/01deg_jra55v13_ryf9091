@@ -11,7 +11,11 @@ DRYRUN=""
 orig_exp=$(basename $(pwd))
 orig_branch=$(git branch | grep '*' | cut -d' ' -f2)
 config_branches=$(git branch -a | grep config)
-$DRYRUN ln -s -f $archive_dir archive
+if [ -h archive ]
+then
+  $DRYRUN rm archive
+fi
+$DRYRUN ln -s $archive_dir archive
 for branch in $config_branches
 do 
   config=$(basename $branch)
