@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ax
+set -eux
 DRYRUN=""
 access_om2_dir=${1:-$ACCESS_OM2_DIR}
 if [ ! -d "$access_om2_dir" ]

@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ax
+set -eux
 DRYRUN=""
 orig_exp=$(basename $(pwd))
 config_branches=$(git branch -a | grep config)
